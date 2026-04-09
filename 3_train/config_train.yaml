@@ -29,6 +29,27 @@ train:
   semi_target_weight: 1.0
   semi_binary_weight: 0.5
   target_group_test_ratio: 0.34
+fewshot_binary:
+  seed: 42
+  feat_dim: 256
+  embedding_dim: 128
+  batch_size: 128
+  num_workers: 0
+  pretrain_epochs: 30
+  head_epochs: 20
+  finetune_epochs: 40
+  pretrain_lr: 0.001
+  finetune_head_lr: 0.001
+  finetune_lr: 0.0002
+  weight_decay: 0.0001
+  semi_target_per_class: 10
+  target_group_test_ratio: 0.34
+  split_mode: repeated
+  repeated_splits: 6
+  prototype_alpha: 0.5
+  supcon_weight: 0.1
+  support_supcon_weight: 0.05
+  temperature: 0.1
 tasks:
 - name: exp_to_2170
   source: experiment
